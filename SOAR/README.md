@@ -172,6 +172,8 @@ This playbook is used to perform an Turbo IOC scan using manually entered IOCs o
   - The playbook starts by receiving inputs:
     - **IOC Hash**: the value of IOC Hash, the user needs to add the MD5, SHA1 or SHA256 hash values.
     - **Cluster ID**: ID of the cluster on which to perform a scan. Supports comma separated values.
+    - **Start Time:** Filter the snapshots from the provided date. Format supported:  yyyy-mm-dd, yyyy-mm-ddTHH:MM:SSZ.
+    - **End Time:** Filter the snapshots until the provided date. Format supported:  yyyy-mm-dd, yyyy-mm-ddTHH:MM:SSZ.
 
 - **Turbo IOC Scan (action)**
 
