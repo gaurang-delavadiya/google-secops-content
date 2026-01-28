@@ -110,7 +110,7 @@ This playbook is used to perform an Advanced IOC scan using manually entered IOC
   - The playbook starts by receiving inputs:
     - **Object ID**: The Object ID of the system on which to perform the scan. Supports comma separated values.
     - **Start Date**: Filter the snapshots from the provided date. Format supported:  yyyy-mm-dd, yyyy-mm-ddTHH:MM:SSZ.
-    - **End Date**: Filter the snapshots from the provided date. Format supported:  yyyy-mm-dd, yyyy-mm-ddTHH:MM:SSZ.
+    - **End Date**: Filter the snapshots until the provided date. Format supported:  yyyy-mm-dd, yyyy-mm-ddTHH:MM:SSZ.
     - **Advanced IOC**: Json encoded Indicators Of Compromise to scan. Json keys signify the type of IOC and the corresponding list of values are the values of the IOC's.
       ```json
       format:
@@ -366,7 +366,7 @@ This block is used to collect inputs for List Events and Rubrik Sensitive Data I
 ![Playbook - Rubrik Anomaly Analysis Input Block](<./screenshots/blocks/Rubrik Anomaly Analysis Input Block.png>)
 
 **Input:**
-  - **Object Name:** The Object ID or the Snappable ID (can be received from case if present)
+  - **Object Name:** The Object Name to fetch Anomaly Events for.
   - **Cluster ID:** The Rubrik cluster ID associated with the object.
 
 **Flow:**
@@ -412,7 +412,7 @@ This block enriches the ransomware analysis context by retrieving sensitive data
 **Input:**
 
 - **Object Name:** The Object ID or the Snappable ID.
-- **Cluster ID:** Name of the file, folder, or file share object.
+- **Cluster ID:** The Rubrik cluster ID associated with the object.
 
 **Flow:**
 
@@ -466,7 +466,7 @@ In case of any failures when running any playbook, we can debug the same by runn
 ---
 ## References
 
-- [Rubrik Security Cloud Documentation](https://github.com/rubrikinc/google-secops-content/tree/main/SOAR)
+- [Rubrik Security Cloud Documentation](https://developer.rubrik.com/Rubrik-Security-Cloud-API/)
 - [Google SecOps Playbooks Documentation](https://cloud.google.com/chronicle/docs/secops/google-secops-soar-toc#work-with-playbooks)
 
 ---
