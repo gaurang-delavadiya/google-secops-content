@@ -1,0 +1,14 @@
+rule rubrik_security_cloud_critical_severity_data_violation{
+  meta:
+    author = "Rubrik Team"
+    description = "Detection will be generated when log type is Rubrik Security Cloud, event type is Security Violation and severity is critical."
+    severity = "High"
+
+  events:
+    $event.metadata.log_type = "RUBRIK_SECURITY_CLOUD"
+    $event.security_result.category_details = "SecurityViolation"
+    $event.security_result.severity = "CRITICAL"
+
+  condition:
+    $event
+}

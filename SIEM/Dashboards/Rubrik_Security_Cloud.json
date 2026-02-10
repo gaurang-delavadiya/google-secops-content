@@ -1,0 +1,473 @@
+{
+    "dashboards": [
+        {
+            "dashboard": {
+                "name": "6e1f162c-8d69-43e6-a132-a8364de4337a",
+                "displayName": "Rubrik Security Cloud",
+                "description": "Dashboard displays visualization for Rubric Security Cloud data.",
+                "definition": {
+                    "filters": [
+                        {
+                            "id": "GlobalTimeFilter",
+                            "dataSource": "GLOBAL",
+                            "filterOperatorAndFieldValues": [
+                                {
+                                    "filterOperator": "PAST",
+                                    "fieldValues": [
+                                        "1",
+                                        "DAY"
+                                    ]
+                                }
+                            ],
+                            "displayName": "Global Time Filter",
+                            "chartIds": [
+                                "71e670bc-35d0-419a-8a74-cad695af8396",
+                                "648e97fa-ffb3-487f-8167-28b57464eef5",
+                                "92cc23fe-889a-4eb2-b1b7-4c9be22b37e4",
+                                "8a7b61ce-d016-4a61-87e6-49f9e55ed140",
+                                "9816ffd7-ad14-4bb9-955e-fffd70ea3297"
+                            ],
+                            "isStandardTimeRangeFilter": true,
+                            "isStandardTimeRangeFilterEnabled": true
+                        }
+                    ],
+                    "charts": [
+                        {
+                            "dashboardChart": "71e670bc-35d0-419a-8a74-cad695af8396",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 49,
+                                "startY": 0,
+                                "spanY": 34
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "648e97fa-ffb3-487f-8167-28b57464eef5",
+                            "chartLayout": {
+                                "startX": 49,
+                                "spanX": 47,
+                                "startY": 0,
+                                "spanY": 34
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "92cc23fe-889a-4eb2-b1b7-4c9be22b37e4",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 96,
+                                "startY": 61,
+                                "spanY": 33
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "8a7b61ce-d016-4a61-87e6-49f9e55ed140",
+                            "chartLayout": {
+                                "startX": 49,
+                                "spanX": 47,
+                                "startY": 34,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "9816ffd7-ad14-4bb9-955e-fffd70ea3297",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 49,
+                                "startY": 34,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        }
+                    ]
+                },
+                "type": "CUSTOM",
+                "etag": "77fed3661f36b2c3aa0b2ddc52e0f5863565e88097c6a079ab83df887c974afc",
+                "access": "DASHBOARD_PRIVATE"
+            },
+            "dashboardCharts": [
+                {
+                    "name": "71e670bc-35d0-419a-8a74-cad695af8396",
+                    "displayName": "Top 10 Logins by username",
+                    "description": "Displays the number of user Login attempts by username within the specified time range.",
+                    "chartDatasource": {
+                        "dashboardQuery": "764e2258-a7fe-4a22-86e6-8bd3919c82e3",
+                        "dataSources": [
+                            "UDM"
+                        ]
+                    },
+                    "visualization": {
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "columnDefs": [
+                            {
+                                "field": "user_name",
+                                "header": "Username"
+                            },
+                            {
+                                "field": "count",
+                                "header": "Count"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "d0a835b0d72f4627eb227b73f36da21a494c9a2cc3328ae29f18376e9d6e2113",
+                    "drillDownConfig": {
+                        "leftDrillDowns": [
+                            {
+                                "id": "user_name",
+                                "displayName": "Run Search on Username",
+                                "defaultSettings": {
+                                    "enabled": true
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "92cc23fe-889a-4eb2-b1b7-4c9be22b37e4",
+                    "displayName": "Number of Events by Class",
+                    "description": "Displays the total number of events by class name within a specified time range.",
+                    "chartDatasource": {
+                        "dashboardQuery": "cf2934c8-46f6-43f0-be3f-3047385b59a6",
+                        "dataSources": [
+                            "UDM"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesType": "PIE",
+                                "encode": {
+                                    "value": "count",
+                                    "itemName": "class_name"
+                                },
+                                "dataLabel": {
+                                    "show": true
+                                },
+                                "radius": [
+                                    "0%",
+                                    "70%"
+                                ],
+                                "itemStyle": {
+                                    "color": "b=>{const {map:c}=vKf(this.theme);b=qMf(b,VKf(this.form.controls.seriesConfig.getRawValue()),a);a=b.nextColorIndex;let d;return(d=\nc.get(b.color))!=null?d:b.color}"
+                                },
+                                "itemColors": {
+                                    "colors": [
+                                        {
+                                            "key": "Login",
+                                            "value": {
+                                                "color": "#1a73e8",
+                                                "label": "Login"
+                                            }
+                                        },
+                                        {
+                                            "key": "Anomaly",
+                                            "value": {
+                                                "color": "#10a3b7",
+                                                "label": "Anomaly"
+                                            }
+                                        },
+                                        {
+                                            "key": "SecurityViolation",
+                                            "value": {
+                                                "color": "#ec453b",
+                                                "label": "SecurityViolation"
+                                            }
+                                        },
+                                        {
+                                            "key": "ThreatMonitoring",
+                                            "value": {
+                                                "color": "#eb730a",
+                                                "label": "ThreatMonitoring"
+                                            }
+                                        },
+                                        {
+                                            "key": "ThreatHunt",
+                                            "value": {
+                                                "color": "#e51f8f",
+                                                "label": "ThreatHunt"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "right": 12,
+                                "legendOrient": "VERTICAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "6a903bdef172228f338d76c2f146690abeabf2a7f994a3e44738225528b0d228",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "648e97fa-ffb3-487f-8167-28b57464eef5",
+                    "displayName": "Login Success/Failure",
+                    "description": "Displays the number of login succeeded and failed within the specified time range.",
+                    "chartDatasource": {
+                        "dashboardQuery": "279989a7-f53d-49d2-8f6d-43be061465a4",
+                        "dataSources": [
+                            "UDM"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesType": "PIE",
+                                "encode": {
+                                    "value": "count",
+                                    "itemName": "login_status"
+                                },
+                                "dataLabel": {
+                                    "show": true
+                                },
+                                "radius": [
+                                    "0%",
+                                    "70%"
+                                ],
+                                "itemStyle": {
+                                    "color": "b=>{const {map:c}=vKf(this.theme);b=qMf(b,VKf(this.form.controls.seriesConfig.getRawValue()),a);a=b.nextColorIndex;let d;return(d=\nc.get(b.color))!=null?d:b.color}"
+                                },
+                                "itemColors": {
+                                    "colors": [
+                                        {
+                                            "key": "Failure",
+                                            "value": {
+                                                "color": "#ec453b",
+                                                "label": "Failure"
+                                            }
+                                        },
+                                        {
+                                            "key": "Success",
+                                            "value": {
+                                                "color": "#009886",
+                                                "label": "Success"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "bottom": 12,
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "745ee979031e9230971b24eadc7213844f3e978bfbec83ec182f8f24beb5c52d",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "9816ffd7-ad14-4bb9-955e-fffd70ea3297",
+                    "displayName": "Number of Anomaly detection alerts over time",
+                    "description": "Displays the number of anomaly detection alerts over the time period.",
+                    "chartDatasource": {
+                        "dashboardQuery": "3c7ae990-a01b-410e-a2b5-9cacf8b7966a",
+                        "dataSources": [
+                            "UDM"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesName": "none",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "date_hour",
+                                    "y": "count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#10a3b7"
+                                },
+                                "seriesUniqueValue": "none"
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "CATEGORY",
+                                "displayName": "Time"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE",
+                                "displayName": "Number of Anomaly detections"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "1c0e55bc71debedf26a168d7394e58b2006b7692be46174fbdc523d8cff410b7",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "8a7b61ce-d016-4a61-87e6-49f9e55ed140",
+                    "displayName": "Threat monitoring matches over time",
+                    "description": "Displays the total number events by class name within a specified time range.",
+                    "chartDatasource": {
+                        "dashboardQuery": "a54a18a7-e0eb-4597-b0da-d43972dff639",
+                        "dataSources": [
+                            "UDM"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesName": "none",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "date_hour",
+                                    "y": "count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#eb730a"
+                                },
+                                "seriesUniqueValue": "none"
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "CATEGORY",
+                                "displayName": "Time"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE",
+                                "displayName": "Threat Monitoring Matches"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "55c8e4cbaab490c1df709d8cdfe9a9d2ab21c1d3ce1cb2b209c2d31aefe90ec1",
+                    "drillDownConfig": {}
+                }
+            ],
+            "dashboardQueries": [
+                {
+                    "name": "764e2258-a7fe-4a22-86e6-8bd3919c82e3",
+                    "query": "// Logins by username\r\nmetadata.log_type = \"RUBRIK_SECURITY_CLOUD\"\r\nmetadata.event_type = \"USER_LOGIN\"\r\nsecurity_result.category_details = \"Login\"\r\n$user_name = target.user.user_display_name\r\n$user_name != \"\"\r\nmatch:\r\n    $user_name\r\noutcome:\r\n    $count = count(target.user.user_display_name)\r\norder:\r\n    $count desc\r\nlimit:\r\n    10\r\n",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "90"
+                        }
+                    },
+                    "etag": "1060fe6c2b004137740cea209ec282f7641d919119a0fda56a86f1ccccf20c34"
+                },
+                {
+                    "name": "cf2934c8-46f6-43f0-be3f-3047385b59a6",
+                    "query": "// Number of Events by class\r\nmetadata.log_type = \"RUBRIK_SECURITY_CLOUD\"\r\n$class_name = security_result.category_details\r\n$class_name != \"\"\r\nmatch:\r\n    $class_name\r\noutcome:\r\n    $count = count(metadata.product_log_id)\r\norder:\r\n    $count desc\r\nlimit:\r\n    10\r\n",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "90"
+                        }
+                    },
+                    "etag": "a3508a1e7896794f0fd13aff5cacfbbe777f6fb9cf6d0a30ac4fefffb7ac3641"
+                },
+                {
+                    "name": "279989a7-f53d-49d2-8f6d-43be061465a4",
+                    "query": "// Login success/failure\r\nmetadata.log_type = \"RUBRIK_SECURITY_CLOUD\"\r\nmetadata.event_type = \"USER_LOGIN\"\r\nsecurity_result.category_details = \"Login\"\r\n$login_status = security_result.action_details\r\n$login_status != \"\"\r\nmatch:\r\n    $login_status\r\noutcome:\r\n    $count = count(security_result.action_details)\r\nlimit:\r\n    50\r\n",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "89"
+                        }
+                    },
+                    "etag": "7fb07709f484f0d260b22388620d220a8032608562e28ad2d6e3485763c607cd"
+                },
+                {
+                    "name": "3c7ae990-a01b-410e-a2b5-9cacf8b7966a",
+                    "query": "metadata.log_type = \"RUBRIK_SECURITY_CLOUD\"\r\nsecurity_result.category_details = \"Anomaly\"\r\nmetadata.product_event_type = \"EncryptionNotRunAnomalyDetectedInfo\" or\r\nmetadata.product_event_type = \"EncryptionNotRunAnomalyDetectedWarning\" or\r\nmetadata.product_event_type = \"VMHostAnomalyDetected\" or\r\nmetadata.product_event_type = \"SnappableElevatedEncryption\" or\r\nmetadata.product_event_type = \"SnappableElevatedEncryptionWithSuspiciousFilesInfo\"\r\n$date_hour=timestamp.get_timestamp(metadata.event_timestamp.seconds, \"%Y-%m-%d : %H\")\r\nmatch:\r\n    $date_hour\r\noutcome:\r\n    $count=count_distinct(metadata.product_log_id)\r\norder:\r\n    $date_hour asc\r\n",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "90"
+                        }
+                    },
+                    "etag": "8b6ed20103ca4d812d6cec530cc9d5e880cb42f75eb2b110170f54a122d8b245"
+                },
+                {
+                    "name": "a54a18a7-e0eb-4597-b0da-d43972dff639",
+                    "query": "metadata.log_type = \"RUBRIK_SECURITY_CLOUD\"\r\nsecurity_result.category_details = \"ThreatMonitoring\"\r\nmetadata.product_event_type = \"ThreatMonitoringFullHashAnalysisMatchesFound\" or\r\nmetadata.product_event_type = \"ThreatMonitoringFullYaraAnalysisMatchesFound\" or\r\nmetadata.product_event_type = \"ThreatMonitoringHashMatchesFound\" or\r\nmetadata.product_event_type = \"ThreatMonitoringYaraMatchesFound\"\r\n$date_hour=timestamp.get_timestamp(metadata.event_timestamp.seconds, \"%Y-%m-%d : %H\")\r\nmatch:\r\n    $date_hour\r\noutcome:\r\n    $count=count_distinct(metadata.product_log_id)\r\norder:\r\n    $date_hour asc\r\n",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "90"
+                        }
+                    },
+                    "etag": "1098e32a4458fd60afb7bf4fa24c134e367f0eddba7843a96cf5da7487cd7940"
+                }
+            ]
+        }
+    ]
+}

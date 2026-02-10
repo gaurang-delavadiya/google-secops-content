@@ -1,0 +1,14 @@
+rule rubrik_security_cloud_critical_anomaly {
+  meta:
+    author = "Rubrik Team"
+    description = "Detection will be generated when log type is Rubrik Security Cloud, event type is Anomaly and severity is critical."
+    severity = "High"
+
+  events:
+    $event.metadata.log_type = "RUBRIK_SECURITY_CLOUD"
+    $event.security_result.category_details = "Anomaly"
+    $event.security_result.severity = "CRITICAL"
+
+  condition:
+    $event
+}

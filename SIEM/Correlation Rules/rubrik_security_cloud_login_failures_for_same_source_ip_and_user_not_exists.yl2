@@ -1,0 +1,23 @@
+rule rubrik_security_cloud_login_failures_for_same_source_ip_and_user_not_exists {
+  meta:
+    author = "Rubrik Team"
+    description = "Detection will be generated for for three or more failed login attempts for same source IP with in 20 minutes and user not exists"
+    severity = "High"
+
+  events:
+    $event.metadata.log_type = "RUBRIK_SECURITY_CLOUD"
+    $event.metadata.event_type = "USER_LOGIN"
+    $event.security_result.category_details = "Login"
+    $event.metadata.product_event_type = "PasswordLoginFailedUnknownUser"
+    $event.security_result.action_details = "Failure"
+    $source_ip = $event.principal.ip
+
+  match:
+    $source_ip over 20m
+
+  outcome:
+    $total_failed_attempts = count($event.metadata.product_log_id) // count of total failed logins
+
+  condition:
+    $event and #event >=3
+}

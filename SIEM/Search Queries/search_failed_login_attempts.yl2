@@ -1,0 +1,3 @@
+metadata.log_type = "RUBRIK_SECURITY_CLOUD"
+metadata.event_type = "USER_LOGIN"
+security_result.action_details = "Failure"

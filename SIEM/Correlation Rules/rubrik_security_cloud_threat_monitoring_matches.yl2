@@ -1,0 +1,17 @@
+rule rubrik_security_cloud_threat_monitoring_matches {
+  meta:
+    author = "Rubrik Team"
+    description = "Detection will be generated when log type is Rubrik Security Cloud and Event Name matches Threat Monitoring events."
+    severity = "High"
+
+  events:
+    $event.metadata.log_type = "RUBRIK_SECURITY_CLOUD" 
+    $event.security_result.category_details = "ThreatMonitoring"
+    $event.metadata.product_event_type = "ThreatMonitoringFullHashAnalysisMatchesFound" or
+    $event.metadata.product_event_type = "ThreatMonitoringFullYaraAnalysisMatchesFound" or
+    $event.metadata.product_event_type = "ThreatMonitoringHashMatchesFound" or
+    $event.metadata.product_event_type = "ThreatMonitoringYaraMatchesFound"
+
+  condition:
+    $event
+}

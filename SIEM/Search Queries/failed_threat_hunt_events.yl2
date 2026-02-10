@@ -1,0 +1,3 @@
+metadata.log_type = "RUBRIK_SECURITY_CLOUD"
+security_result.category_details = "ThreatHunt"
+security_result.action_details = "Failure"

@@ -1,0 +1,3 @@
+metadata.log_type = "RUBRIK_SECURITY_CLOUD"
+security_result.category_details = "ThreatMonitoring"
+security_result.action_details = "Failure" or security_result.action_details = "TaskFailure"
