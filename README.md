@@ -1,7 +1,7 @@
 # Google SecOps Content For Rubrik Security Cloud
 This repository contains correlation rules, search queries, dashboards, and playbooks for Google SecOps (Chronicle) designed specifically to work with Rubrik Security Cloud (RSC) event data and APIs.
 
-> :warning: **IMPORTANT:** This repository is currently under active development. **Content is not yet suitable for production use.** Please watch this repository for updates on when content becomes available.
+> :warning: **IMPORTANT:** This repository is currently under active development. **Content is not yet suitable for production use.**
 > 
 # :hammer: Installation
 Installation and import guides for each content type will be provided as content is released.
