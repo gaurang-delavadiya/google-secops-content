@@ -1,6 +1,6 @@
 rule rubrik_security_cloud_login_failures_for_user_exists {
   meta:
-    author = "Rubrik Team"
+    author = "Rubrik"
     description = "Detection will be generated for five or more failed login attempts for the same user."
     severity = "High"
 

@@ -1,6 +1,6 @@
 rule rubrik_security_cloud_login_failures_for_same_user_and_user_not_exists {
   meta:
-    author = "Rubrik Team"
+    author = "Rubrik"
     description = "Detection will be generated for 5 or more login attempts for same user within 20 minutes and for user not exists"
     severity = "High"
 

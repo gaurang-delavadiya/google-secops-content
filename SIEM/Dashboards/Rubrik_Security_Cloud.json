@@ -4,7 +4,7 @@
             "dashboard": {
                 "name": "6e1f162c-8d69-43e6-a132-a8364de4337a",
                 "displayName": "Rubrik Security Cloud",
-                "description": "Dashboard displays visualization for Rubric Security Cloud data.",
+                "description": "Dashboard displays visualization for Rubrik Security Cloud data.",
                 "definition": {
                     "filters": [
                         {

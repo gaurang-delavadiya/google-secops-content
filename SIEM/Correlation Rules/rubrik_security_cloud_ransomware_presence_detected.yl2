@@ -1,6 +1,6 @@
 rule rubrik_security_cloud_ransomware_presence_detected {
   meta:
-    author = "Rubrik Team"
+    author = "Rubrik"
     description = "Detection will be generated when log type is Rubrik Security Cloud and log indicates Ransomware was found."
     severity = "High"
 

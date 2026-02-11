@@ -1,6 +1,6 @@
 rule rubrik_security_cloud_critical_anomaly {
   meta:
-    author = "Rubrik Team"
+    author = "Rubrik"
     description = "Detection will be generated when log type is Rubrik Security Cloud, event type is Anomaly and severity is critical."
     severity = "High"
 

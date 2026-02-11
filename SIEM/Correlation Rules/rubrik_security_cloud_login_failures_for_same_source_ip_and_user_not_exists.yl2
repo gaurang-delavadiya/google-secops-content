@@ -1,6 +1,6 @@
 rule rubrik_security_cloud_login_failures_for_same_source_ip_and_user_not_exists {
   meta:
-    author = "Rubrik Team"
+    author = "Rubrik"
     description = "Detection will be generated for for three or more failed login attempts for same source IP with in 20 minutes and user not exists"
     severity = "High"
 
